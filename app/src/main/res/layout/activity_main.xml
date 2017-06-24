@@ -4,11 +4,17 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context="com.example.asus.androidtraining.MainActivity">
     <Button
         android:id="@+id/animationDemo"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="animation"/>
+    <Button
+        android:id="@+id/mediaPlayerDemo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="mediaPlayer demo"/>
 
 </LinearLayout>

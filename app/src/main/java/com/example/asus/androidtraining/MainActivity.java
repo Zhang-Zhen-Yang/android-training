@@ -8,9 +8,10 @@ import android.support.v7.widget.ButtonBarLayout;
 import android.view.View;
 import android.widget.Button;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
     Button animationDemo;
+    Button mediaPlayerDemo;
     Context context = this;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,17 +22,24 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void bindAction() {
-        animationDemo.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                startActivity(new Intent(context,AnimationActivity.class));
-            }
-        });
+        animationDemo.setOnClickListener(this);
+        mediaPlayerDemo.setOnClickListener(this);
     }
 
     private void initView() {
         animationDemo = (Button) findViewById(R.id.animationDemo);
+        mediaPlayerDemo  = (Button) findViewById(R.id.mediaPlayerDemo);
     }
 
 
+    @Override
+    public void onClick(View view) {
+        switch(view.getId()){
+            case R.id.animationDemo:
+                startActivity(new Intent(context,AnimationActivity.class));
+            case R.id.mediaPlayerDemo:
+                startActivity(new Intent(context,MediaPlayerActivity.class));
+
+        }
+    }
 }
