@@ -37,8 +37,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         switch(view.getId()){
             case R.id.animationDemo:
                 startActivity(new Intent(context,AnimationActivity.class));
+                break;
             case R.id.mediaPlayerDemo:
                 startActivity(new Intent(context,MediaPlayerActivity.class));
+                break;
+            default :break;
 
         }
     }
