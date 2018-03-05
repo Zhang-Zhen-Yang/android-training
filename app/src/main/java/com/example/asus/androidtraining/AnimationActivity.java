@@ -1,5 +1,8 @@
 package com.example.asus.androidtraining;
 
+import android.animation.Animator;
+import android.animation.AnimatorInflater;
+import android.animation.ObjectAnimator;
 import android.animation.ValueAnimator;
 import android.graphics.Matrix;
 import android.graphics.drawable.AnimationDrawable;
@@ -21,9 +24,13 @@ public class AnimationActivity extends AppCompatActivity {
     //2
     TextView viewAnimatonText;
     ImageView viewAnimatonImg;
-    //
+    //3
     ImageView valueAnimatorImg;
     TextView valueAnimatorText;
+    //4
+    ImageView valueAnimatorImgFromXml;
+    TextView valueAnimatorTextFromXml;
+    //4
     Button btn;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -86,6 +93,18 @@ public class AnimationActivity extends AppCompatActivity {
         });
         anim.setDuration(10000);
         anim.start();
+        //4
+        ObjectAnimator animator = (ObjectAnimator) AnimatorInflater.loadAnimator(this,R.animator.default_value);
+        valueAnimatorImgFromXml.setPivotX(400);
+        animator.setTarget(valueAnimatorImgFromXml);
+        animator.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
+            @Override
+            public void onAnimationUpdate(ValueAnimator valueAnimator) {
+                valueAnimatorTextFromXml.setText(String.valueOf(valueAnimator.getAnimatedValue()) );
+            }
+        });
+        animator.start();
+
     }
 
     private void initView() {
@@ -100,6 +119,9 @@ public class AnimationActivity extends AppCompatActivity {
         //3
         valueAnimatorImg = (ImageView) findViewById(R.id.valueAnimatorImg);
         valueAnimatorText = (TextView) findViewById(R.id.valueAnimatorText);
+        //4
+        valueAnimatorImgFromXml = (ImageView) findViewById(R.id.valueAnimatorImgFromXml);
+        valueAnimatorTextFromXml = (TextView) findViewById(R.id.valueAnimatorTextFromXml);
     }
 }
 
