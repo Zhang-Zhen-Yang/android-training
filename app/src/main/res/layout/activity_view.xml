@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.example.asus.androidtraining.ViewActivity">
+    <RadioGroup android:layout_width="match_parent" android:id="@+id/fruit_wrap" android:layout_height="wrap_content" android:orientation="horizontal">
+        <RadioButton android:text="apple" android:id="@+id/radio_apple" android:layout_width="wrap_content" android:layout_height="wrap_content"/>
+        <RadioButton android:text="banana" android:id="@+id/radio_banana" android:layout_width="wrap_content" android:layout_height="wrap_content"/>
+    </RadioGroup>
+    <CheckBox android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="pearl" android:button="@drawable/checkbox" android:paddingLeft="10dp"/>
+    <CheckBox android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="pearl" android:button="@null" android:drawableRight="@android:drawable/btn_plus"/>
+
+</LinearLayout>

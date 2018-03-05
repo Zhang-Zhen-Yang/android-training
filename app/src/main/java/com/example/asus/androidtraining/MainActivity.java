@@ -15,6 +15,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     Button animationDemo;
     Button mediaPlayerDemo;
     Button menuDemo;
+    Button viewDemo;
     Context context = this;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,12 +31,14 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         animationDemo.setOnClickListener(this);
         mediaPlayerDemo.setOnClickListener(this);
         menuDemo.setOnClickListener(this);
+        viewDemo.setOnClickListener(this);
     }
 
     private void initView() {
         animationDemo = (Button) findViewById(R.id.animationDemo);
         mediaPlayerDemo  = (Button) findViewById(R.id.mediaPlayerDemo);
         menuDemo  = (Button) findViewById(R.id.menuDemo);
+        viewDemo  = (Button) findViewById(R.id.viewDemo);
     }
 
 
@@ -51,6 +54,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             case R.id.menuDemo:
                 Toast.makeText(this, "apple", Toast.LENGTH_SHORT).show();
                 startActivity(new Intent(context,MenuActivity.class));
+                break;
+            case R.id.viewDemo:
+                startActivity(new Intent(context,ViewActivity.class));
                 break;
             default :break;
 
