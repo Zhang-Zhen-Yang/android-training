@@ -23,7 +23,8 @@
         <activity android:name=".AnimationActivity" />
         <activity android:name=".MediaPlayerActivity" />
         <activity android:name=".MenuActivity" />
-        <activity android:name=".ViewActivity"></activity>
+        <activity android:name=".ViewActivity" />
+        <activity android:label="list view" android:name=".ListViewActivity"></activity>
     </application>
 
 </manifest>
